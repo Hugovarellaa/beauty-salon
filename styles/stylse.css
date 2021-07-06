@@ -43,9 +43,28 @@ header nav {
   align-items: center;
   justify-content: space-between;
 }
+ul {
+  list-style: none;
+}
+nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+header nav ul.grid {
+  gap: 4rem;
+}
+header nav ul li {
+  text-align: center;
+}
 header nav .menu {
   opacity: 0;
   visibility: hidden;
+}
+nav ul li a{
+  transition: .2s
+}
+nav ul li a:hover{
+  color: var(--base-color);
 }
 header nav.show .menu {
   opacity: 1;
@@ -82,7 +101,7 @@ img {
   height: auto;
 }
 
-h1 {
+.title {
   font: 700 1.875rem "Poppins", sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
