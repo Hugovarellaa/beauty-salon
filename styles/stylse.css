@@ -28,13 +28,13 @@ body {
 header#header {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 2rem;
-  display: flex; 
+  display: flex;
   width: 100%;
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
-  background-color:var(--body-color);
+  background-color: var(--body-color);
 }
 
 header nav {
@@ -42,6 +42,22 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+header nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+header nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background-color: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .container {
@@ -72,20 +88,19 @@ h1 {
   -webkit-font-smoothing: auto;
 }
 main {
-  margin-top: 4.5rem;
+  margin-top: 6.5rem;
 }
 .grid {
   display: grid;
   gap: 2rem;
 }
 
-#home{
+#home {
   overflow: hidden;
 }
 
 #home .container {
   margin: 0;
- 
 }
 #home .text {
   margin-left: 1.5rem;
@@ -124,7 +139,7 @@ main {
   margin-bottom: 2rem;
   max-width: 100%;
 }
-.button{
+.button {
   background-color: var(--base-color);
   color: var(--text-color-light);
   height: 3.5rem;
@@ -133,16 +148,16 @@ main {
   padding: 0 2rem;
   border-radius: 0.25rem;
   font: 500 1rem "DM Sans", sans-serif;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
-.button:hover{
-  background: var(--base-color-alt)
+.button:hover {
+  background: var(--base-color-alt);
 }
-.divider-1{
-  height:1px;
+.divider-1 {
+  height: 1px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34)100%
+    hsla(var(--hue), 65%, 88%, 0.34) 100%
   );
 }
