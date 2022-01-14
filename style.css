@@ -19,7 +19,6 @@ img {
 }
 
 /*====  VARIABLES ============================ */
-
 :root {
   --header-height: 4.5rem;
 
@@ -43,7 +42,6 @@ img {
 }
 
 /*===  BASE ============================ */
-
 html {
   scroll-behavior: smooth;
 }
@@ -158,7 +156,6 @@ body {
 }
 
 /*====  NAVIGATION ============================ */
-
 nav {
   height: var(--header-height);
   display: flex;
@@ -176,7 +173,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
@@ -189,42 +187,75 @@ nav ul li a::after {
   position: absolute;
   left: 0;
   bottom: -1.5rem;
+
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
 nav .menu {
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
 }
 
-/*====  Mostrar menu ============================ */
-
-nav.show ul.grid {
-  gap: 4rem;
+nav .menu ul {
+  display: none;
 }
 
+/* Mostrar menu */
 nav.show .menu {
   opacity: 1;
   visibility: visible;
 
   background: var(--body-color);
+
   height: 100vh;
   width: 100vw;
+
   position: fixed;
   top: 0;
   left: 0;
-}
 
-nav.show .menu {
   display: grid;
   place-content: center;
 }
 
-/*====  toggle menu ============================ */
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/* toggle menu */
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+
+  transition: 0.2s;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
 
 /*====  HOME ============================ */
 
